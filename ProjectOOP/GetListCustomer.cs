@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using System.IO;
 namespace ProjectOOP
 {
-    interface Inputlistofcustomer
+    interface IUseForGetlistcustomer
     {
         void InputListofCustomer();
-    }
-    interface Outputlistofcustomer
-    {
         void OutputlistofCustomer();
     }
-    class GetListCustomer :Inputlistofcustomer
+    class GetListCustomer :IUseForGetlistcustomer
     {
         protected List<Customer> ListofCustomer;
         public GetListCustomer()

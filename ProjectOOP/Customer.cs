@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.IO;
 namespace ProjectOOP
 {
-    interface outputinfo
+    interface IOutputinfo
     {
         void Outputinformation();
     }
     [Serializable] //để tạo ra file
-    class Customer :  outputinfo
+    class Customer :  IOutputinfo
     {
         protected string CustomerName;
         protected string PhoneNumber;

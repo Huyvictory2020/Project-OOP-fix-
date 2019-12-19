@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using System.IO;
 namespace ProjectOOP
 {
-    interface inputlistofproduct
+    interface IUseForGetlistproduct
     {
         void Inputlistofproduct();
-    }
-    interface outputlistproduct
-    {
         void OutputlistofProduct();
     }
-    class GetListProduct :inputlistofproduct, outputlistproduct
+    class GetListProduct : IUseForGetlistproduct
     {
         protected List<Product> ListofProduct;
         public GetListProduct()
@@ -33,7 +30,7 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Computer { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, cPu = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Computer { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, CPU = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
             var threenextlines = File.ReadLines(@"E:\Product.txt").Skip(3).Take(3);
@@ -42,7 +39,7 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Mouse { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, qUality = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Mouse { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, Quality = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
             var lastthreelines = File.ReadLines(@"E:\Product.txt").Skip(6).Take(3);
@@ -51,7 +48,7 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Keyboard { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, COlor = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Keyboard { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, COlor = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
         }

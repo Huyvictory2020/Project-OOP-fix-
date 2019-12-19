@@ -8,11 +8,11 @@ namespace ProjectOOP
 {
     class Mouse :Product
     {
-        protected string Quality;
-        public string qUality
+        protected string _quality;
+        public string Quality
         {
-            get { return this.Quality; }
-            set { this.Quality = value; }
+            get { return this._quality; }
+            set { this._quality = value; }
         }
         public Mouse () :base()
         {
@@ -20,12 +20,12 @@ namespace ProjectOOP
         }
         public Mouse(string Nameofproduct, string SeRialnumber, string TYPE, string PRICE, string quality) : base(Nameofproduct, SeRialnumber, TYPE, PRICE)
         {
-            this.Quality = quality;
+            this._quality = quality;
         }
         public override void OutputlistofProduct()
         {
             base.OutputlistofProduct();
-            Console.WriteLine("Quality: " + this.Quality);
+            Console.WriteLine("Quality: " + this._quality);
         }
     }
 }

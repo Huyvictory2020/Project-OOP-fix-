@@ -7,20 +7,14 @@ using System.IO;
 namespace ProjectOOP
 {
 
-    interface findexchange
+    interface IUseForModifyCustomerAndProduct
     {
         void Findexchange();
-    }
-    interface findname
-    {
         void Findname();
-    }
-    interface findmaxmoneyspent
-    {
         void Maxmoneyspent();
     }
     //có 2 interfacedc thửa hường bởi class này, inputlistofproduct,inputlistofcustomer
-    class ListofCustomerandListofProudctModification :  inputlistofproduct, Inputlistofcustomer,findexchange, findname, findmaxmoneyspent 
+    class ListofCustomerandListofProudctModification :  IUseForGetlistproduct, IUseForGetlistcustomer, IUseForModifyCustomerAndProduct
     {
         protected List<Product> ListofProduct;
         protected List<Customer> ListofCustomer;
@@ -42,7 +36,7 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Computer { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, cPu = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Computer { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, CPU = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
             var threenextlines = File.ReadLines(@"E:\Product.txt").Skip(3).Take(3);
@@ -51,7 +45,7 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Mouse { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, qUality = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Mouse { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, Quality = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
             var lastthreelines = File.ReadLines(@"E:\Product.txt").Skip(6).Take(3);
@@ -60,10 +54,12 @@ namespace ProjectOOP
                 var splitline = line.Split(new[] { ',' });
                 if (splitline != null && splitline.Any())
                 {
-                    ListofProduct.Add(new Keyboard { nameofproduct = splitline[0], serialnumber = splitline.Length > 1 ? splitline[1] : null, type = splitline.Length > 2 ? splitline[2] : null, price = splitline.Length > 3 ? splitline[3] : null, COlor = splitline.Length > 4 ? splitline[4] : null });
+                    ListofProduct.Add(new Keyboard { Nameofproduct = splitline[0], Serialnumber = splitline.Length > 1 ? splitline[1] : null, Type = splitline.Length > 2 ? splitline[2] : null, Price = splitline.Length > 3 ? splitline[3] : null, COlor = splitline.Length > 4 ? splitline[4] : null });
                 }
             }
         }
+        public void OutputlistofProduct()
+        {}
         public void InputListofCustomer()
         {
             var alllines = File.ReadAllLines(@"E:\Customer.txt");
@@ -76,6 +72,8 @@ namespace ProjectOOP
                 }
             }
         }
+        public void OutputlistofCustomer()
+        {}
         public void Findexchange()
         {
             Console.WriteLine("*********************");
@@ -84,7 +82,7 @@ namespace ProjectOOP
             {
                 for (int j = 0; j < ListofCustomer.Count; j++)
                 {
-                    exchange = Convert.ToDouble(ListofCustomer[i].MONeyspent) - Convert.ToDouble(ListofProduct[i].price);
+                    exchange = Convert.ToDouble(ListofCustomer[i].MONeyspent) - Convert.ToDouble(ListofProduct[i].Price);
                 }
                 Console.WriteLine("Exchange of customer {0} - {1}", i, exchange);
             }

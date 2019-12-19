@@ -7,35 +7,35 @@ using System.Threading.Tasks;
 namespace ProjectOOP
 {
 
-    interface findgreatestsalary
+    interface IFindgreatestsalary
     {
         void Employeewithgreatestsalary();
     }
-    interface findtotalsalary
+    interface IFindtotalsalary
     {
         void Findtotalsalary();
     }
-    interface remove
+    interface IRemove
     {
         void Remove();
     }
-    interface sort
+    interface ISort
     {
         void Sortdescending();
     }
-    interface add
+    interface IAdd
     {
         void Add();
     }
-    interface findbyname
+    interface IFindbyname
     {
         void Findbyname();
     }
-    interface definetherank
+    interface IDefinetherank
     {
         void Definetherank();
     }
-    class DeclareFunction :  findgreatestsalary, findtotalsalary, remove, sort, add, findbyname, definetherank
+    class DeclareFunction :  IFindgreatestsalary, IFindtotalsalary, IRemove, ISort, IAdd, IFindbyname, IDefinetherank
     {
         protected List<Employee> ListofEmployee;
         protected List<Employee> InternalList;
@@ -99,7 +99,7 @@ namespace ProjectOOP
             Employee max = this.ListofEmployee[0];
             for (int i = 0; i < ListofEmployee.Count; i++)
             {
-                if (max.salary < ListofEmployee[i].salary)
+                if (max.Salary < ListofEmployee[i].Salary)
                 {
                     max = ListofEmployee[i];
                 }
@@ -119,7 +119,7 @@ namespace ProjectOOP
             double sum = 0;
             for (int i = 0; i < ListofEmployee.Count; i++)
             {
-                sum += ListofEmployee[i].salary;
+                sum += ListofEmployee[i].Salary;
             }
             Console.WriteLine("Sum of all employee in store:" + sum);
             Console.WriteLine("*********************");
@@ -138,7 +138,7 @@ namespace ProjectOOP
                     ListofEmployee.RemoveAt(vitri);
                 }
             }
-            var newlist = ListofEmployee.OrderByDescending(e => e.salary).ToList();
+            var newlist = ListofEmployee.OrderByDescending(e => e.Salary).ToList();
             Console.WriteLine("List after removing:");
             foreach (Employee e in newlist)
             {
@@ -149,7 +149,7 @@ namespace ProjectOOP
         public void Sortdescending()
         {
             Console.WriteLine("*********************");
-            var newlist = ListofEmployee.OrderByDescending(e => e.salary).ToList();
+            var newlist = ListofEmployee.OrderByDescending(e => e.Salary).ToList();
             Console.WriteLine("List after sorting:");
             foreach (Employee e in newlist)
             {
@@ -194,20 +194,20 @@ namespace ProjectOOP
             Console.WriteLine("Rank of each employee");   
             for (int i=0; i<ListofEmployee.Count; i++)
             {
-                if(ListofEmployee[i].numberofworkday <30)
+                if(ListofEmployee[i].Numberofworkday <30)
                 {
                     Console.WriteLine(ListofEmployee[i].NAME);
-                    Console.WriteLine(ListofEmployee[i].rank = "Bad");
+                    Console.WriteLine(ListofEmployee[i].Rank = "Bad");
                 }
-                else if(ListofEmployee[i].numberofworkday <= 60)
+                else if(ListofEmployee[i].Numberofworkday <= 60)
                 {
                     Console.WriteLine(ListofEmployee[i].NAME);
-                    Console.WriteLine(ListofEmployee[i].rank = "Good");
+                    Console.WriteLine(ListofEmployee[i].Rank = "Good");
                 }
-                else if (ListofEmployee[i].numberofworkday >100)
+                else if (ListofEmployee[i].Numberofworkday >100)
                 {
                     Console.WriteLine(ListofEmployee[i].NAME);
-                    Console.WriteLine(ListofEmployee[i].rank = "Excellent");
+                    Console.WriteLine(ListofEmployee[i].Rank = "Excellent");
                 }
             }
             Console.WriteLine("*********************");

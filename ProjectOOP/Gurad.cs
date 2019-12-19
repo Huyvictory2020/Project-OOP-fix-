@@ -31,8 +31,8 @@ namespace ProjectOOP
         {
             base.OutputinformationofEmployee();
             Console.WriteLine("Bonus: " + this.Bonus);
-            this.Salary = FindSalary();
-            Console.WriteLine("The salary of the Guard is:" + this.Salary);
+            this._salary = FindSalary();
+            Console.WriteLine("The salary of the Guard is:" + this._salary);
         }
     }
 }

@@ -8,11 +8,11 @@ namespace ProjectOOP
 {
     class Computer :Product
     {
-        protected string CPU;
-        public string cPu
+        protected string Cpu;
+        public string CPU
         {
-            get { return this.CPU; }
-            set { this.CPU = value; }
+            get { return this.Cpu; }
+            set { this.Cpu = value; }
         }
         public Computer (): base()
         {
@@ -20,12 +20,12 @@ namespace ProjectOOP
         }
         public Computer(string Nameofproduct, string SeRialnumber, string TYPE, string PRICE, string cpu): base(Nameofproduct, SeRialnumber, TYPE, PRICE)
         {
-            this.CPU = cpu;
+            this.Cpu = cpu;
         }
         public override void OutputlistofProduct()
         {
             base.OutputlistofProduct();
-            Console.WriteLine("CPU: " + this.CPU);
+            Console.WriteLine("CPU: " + this.Cpu);
         }
     }
 }

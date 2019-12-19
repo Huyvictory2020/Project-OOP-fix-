@@ -31,8 +31,8 @@ namespace ProjectOOP
         {
             base.OutputinformationofEmployee();
             Console.WriteLine("The Commission:" + this.Commission);
-            this.Salary = FindSalary();
-            Console.WriteLine("Salary of Retailer is:" +this.Salary);
+            this._salary = FindSalary();
+            Console.WriteLine("Salary of Retailer is:" +this._salary);
         }
     }
 }

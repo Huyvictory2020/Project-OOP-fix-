@@ -6,31 +6,25 @@ using System.Threading.Tasks;
 
 namespace ProjectOOP
 {
-    interface Input
+    interface IUseForEmployee
     {
         void InputinformationofEmployee();
-    }
-    interface Output
-    {
+        double FindSalary();
         void OutputinformationofEmployee();
     }
-    interface findsalary
-    {
-         double FindSalary();
-    }
-    class Employee : Input, Output, findsalary
+    class Employee : IUseForEmployee
     {
         protected string Name;
         protected string Id;
         protected double Birthyear;
-        protected double Numberofworkday;
+        protected double _numberofworkday;
         protected double BaseSalary;
-        protected double Salary;
-        protected string Rank;
-        public double salary
+        protected double _salary;
+        protected string _rank;
+        public double Salary
         {
-            get { return this.Salary; }
-            set { this.Salary = value; }
+            get { return this._salary; }
+            set { this._salary = value; }
         }
         public string ID
         {
@@ -42,15 +36,15 @@ namespace ProjectOOP
             get { return this.Name; }
             set { this.Name = value; }
         }
-        public double numberofworkday
+        public double Numberofworkday
         {
-            get { return this.Numberofworkday; }
-            set { this.Numberofworkday = value; }
+            get { return this._numberofworkday; }
+            set { this._numberofworkday = value; }
         }
-        public string rank
+        public string Rank
         {
-            get { return this.Rank; }
-            set { this.Rank = value; }
+            get { return this._rank; }
+            set { this._rank = value; }
         }
         public Employee()
         {
@@ -61,9 +55,9 @@ namespace ProjectOOP
             this.Name = name;
             this.Id = id;
             this.Birthyear = birtyear;
-            this.Numberofworkday = numberofworkday;
+            this._numberofworkday = numberofworkday;
             this.BaseSalary = basesalary;
-            this.Salary = salary;
+            this._salary = salary;
         }
         public virtual void InputinformationofEmployee()
         {
@@ -72,7 +66,7 @@ namespace ProjectOOP
             Console.WriteLine("Type the ID");
             this.Id = Console.ReadLine();
             Console.WriteLine("Type numberofworkday:");
-            this.Numberofworkday = Convert.ToDouble(Console.ReadLine());
+            this._numberofworkday = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Type the BirthYear");
             this.Birthyear = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Type the BaseSalary");
@@ -86,7 +80,7 @@ namespace ProjectOOP
         {
             Console.WriteLine("Name of employee:" + this.Name);
             Console.WriteLine("ID:" + this.Id);
-            Console.WriteLine("Numberofworkday:" + this.Numberofworkday);
+            Console.WriteLine("Numberofworkday:" + this._numberofworkday);
             Console.WriteLine("Birth Year:" + this.Birthyear);
             Console.WriteLine("BaseSalary:" + this.BaseSalary);
         }
