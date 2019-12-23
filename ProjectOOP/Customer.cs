@@ -10,6 +10,7 @@ namespace ProjectOOP
 {
     interface IOutputinfo
     {
+        void Input1person();
         void Outputinformation();
     }
     [Serializable] //để tạo ra file
