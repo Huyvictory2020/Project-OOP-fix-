@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Guard : Employee
     {
-        protected double Bonus;
+        private double Bonus;
         public Guard() :base()
             {
 

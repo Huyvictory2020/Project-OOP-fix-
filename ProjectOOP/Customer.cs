@@ -58,6 +58,23 @@ namespace ProjectOOP
             this.NameofProductbought = nameofproductbought;
             this.SerialNumberofproductbought = serialnumberofproductbought;
         }
+        public void Input1person()
+        {
+            Console.WriteLine("type the name of the customer");
+            this.CustomerName = Console.ReadLine();
+            Console.WriteLine("Type the phonenumber");
+            this.PhoneNumber = Console.ReadLine();
+            Console.WriteLine("type the money spent");
+            this.MoneySpent = Console.ReadLine();
+            Console.WriteLine("Type the name of product bought");
+            this.NameofProductbought = Console.ReadLine();
+            Console.WriteLine("Type the serial number of product bought");
+            this.SerialNumberofproductbought = Console.ReadLine();
+        }
+        public override string ToString()
+        {
+            return this.CUStomername + "," + this.PHOnenumber + "," + this.MONeyspent + "," + this.NAMEofproductbought + "," + this.SERIALnumberofproductbought;
+        }
         public void Outputinformation()
         {
             Console.WriteLine("Customer Name: " + this.CustomerName);

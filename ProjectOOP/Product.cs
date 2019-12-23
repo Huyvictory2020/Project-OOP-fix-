@@ -47,7 +47,7 @@ namespace ProjectOOP
             this._type = TYPE;
             this._price = PRICE;
         }
-      public virtual void OutputlistofProduct()
+        public virtual void OutputlistofProduct()
         {
             Console.WriteLine("Name of Product: " + this._nameofProduct);
             Console.WriteLine("Serial Number: " + this._serialnumber);

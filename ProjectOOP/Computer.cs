@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Computer :Product
     {
-        protected string Cpu;
+        private string Cpu;
         public string CPU
         {
             get { return this.Cpu; }

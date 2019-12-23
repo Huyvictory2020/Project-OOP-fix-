@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Retailer : Employee
     {
-        protected double Commission;
+        private double Commission;
         public Retailer() : base()
         {
 

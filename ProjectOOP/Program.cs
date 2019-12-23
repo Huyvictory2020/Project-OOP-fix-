@@ -101,6 +101,7 @@ namespace ProjectOOP
                         Console.WriteLine("You have choose option 4");
                         GetListCustomer gc = new GetListCustomer();
                         gc.InputListofCustomer();
+                        gc.Outputnewlist();
                         Console.WriteLine("Get information sucessfully!");
                         gc.OutputlistofCustomer();
                         break;
@@ -124,7 +125,7 @@ namespace ProjectOOP
                                 break;
                             case 2:
                                 Console.WriteLine("You have choose option 2");
-                                l.Findexchange();
+                                l.Findname();
                                 break;
                             case 3:
                                 Console.WriteLine("You have choose option 3");

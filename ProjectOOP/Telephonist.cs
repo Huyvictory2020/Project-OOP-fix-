@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Telephonist : Employee
     {
-        protected double Allowance;
+        private double Allowance;
         public Telephonist() : base()
         {
 

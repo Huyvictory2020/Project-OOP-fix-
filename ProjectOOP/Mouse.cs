@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Mouse :Product
     {
-        protected string _quality;
+        private string _quality;
         public string Quality
         {
             get { return this._quality; }

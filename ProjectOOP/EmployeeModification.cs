@@ -7,35 +7,17 @@ using System.Threading.Tasks;
 namespace ProjectOOP
 {
 
-    interface IFindgreatestsalary
+    interface IUseForModifyEmployee
     {
         void Employeewithgreatestsalary();
-    }
-    interface IFindtotalsalary
-    {
         void Findtotalsalary();
-    }
-    interface IRemove
-    {
         void Remove();
-    }
-    interface ISort
-    {
         void Sortdescending();
-    }
-    interface IAdd
-    {
         void Add();
-    }
-    interface IFindbyname
-    {
         void Findbyname();
-    }
-    interface IDefinetherank
-    {
         void Definetherank();
     }
-    class DeclareFunction :  IFindgreatestsalary, IFindtotalsalary, IRemove, ISort, IAdd, IFindbyname, IDefinetherank
+    class DeclareFunction : IUseForModifyEmployee
     {
         protected List<Employee> ListofEmployee;
         protected List<Employee> InternalList;

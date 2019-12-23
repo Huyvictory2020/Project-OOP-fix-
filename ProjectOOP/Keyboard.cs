@@ -8,7 +8,7 @@ namespace ProjectOOP
 {
     class Keyboard : Product
     {
-        protected string Color;
+        private string Color;
         public string COlor
         {
             get { return this.Color; }
